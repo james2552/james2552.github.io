@@ -6,10 +6,18 @@ html {
   margin: auto;
 }
 
-h1, p, a {
+h1, p, a, table, nav {
   color: white;
 }
 
 .images img {
   width: 20em;
+}
+
+table, td, th  {
+  border: 1px solid white;
+}
+
+table, nav {
+  margin: auto;
 }

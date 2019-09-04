@@ -1,0 +1,15 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: blue;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1, p, a {
+  color: white;
+}
+
+.images img {
+  width: 20em;
+}

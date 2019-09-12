@@ -6,124 +6,56 @@
     <meta name="robots" content="noindex">
     <title>Colour Codes</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>
   <div class="navigation">
     <nav>
       <a href="/">Home</a> |
       <a href="/colour-codes/">Colour Codes</a>
+	<a href="/chart/">Colour Chart</a>
     </nav>
   </div>
     <ul>
-    <h1>Colour Codes</h1>
-    <p>List of colour codes:</p>
-  <div class="tables">
-    <table>
-		<thead>
-		<tr>
-			<th>Color</th>
-			<th>HTML / CSS Name</th>
-			<th>Hex Code<p>#RRGGBB</th>
-			<th>Decimal Code<p>(R,G,B)</th>
-		</tr>
-		</thead>
-		<tr>
-			<td style="background: #000000">&nbsp;</td>
-			<td>Black</td>
-			<td>#000000</td>
-			<td>(0,0,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #FFFFFF">&nbsp;</td>
-			<td>White</td>
-			<td>#FFFFFF</td>
-			<td>(255,255,255)</td>
-		</tr>
-		<tr>
-			<td style="background: #FF0000">&nbsp;</td>
-			<td>Red</td>
-			<td>#FF0000</td>
-			<td>(255,0,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #00FF00;">&nbsp;</td>
-			<td>Lime</td>
-			<td>#00FF00</td>
-			<td>(0,255,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #0000FF;">&nbsp;</td>
-			<td>Blue</td>
-			<td>#0000FF</td>
-			<td>(0,0,255)</td>
-		</tr>
-		<tr>
-			<td style="background: #FFFF00;">&nbsp;</td>
-			<td>Yellow</td>
-			<td>#FFFF00</td>
-			<td>(255,255,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #00FFFF;">&nbsp;</td>
-			<td>Cyan / Aqua</td>
-			<td>#00FFFF</td>
-			<td>(0,255,255)</td>
-		</tr>
-		<tr>
-			<td style="background: #FF00FF;">&nbsp;</td>
-			<td>Magenta / Fuchsia</td>
-			<td>#FF00FF</td>
-			<td>(255,0,255)</td>
-		</tr>
-		<tr>
-			<td style="background: #C0C0C0;">&nbsp;</td>
-			<td>Silver</td>
-			<td>#C0C0C0</td>
-			<td>(192,192,192)</td>
-		</tr>
-		<tr>
-			<td style="background: #808080;">&nbsp;</td>
-			<td>Gray</td>
-			<td>#808080</td>
-			<td>(128,128,128)</td>
-		</tr>
-		<tr>
-			<td style="background: #800000;">&nbsp;</td>
-			<td>Maroon</td>
-			<td>#800000</td>
-			<td>(128,0,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #808000;">&nbsp;</td>
-			<td>Olive</td>
-			<td>#808000</td>
-			<td>(128,128,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #008000;">&nbsp;</td>
-			<td>Green</td>
-			<td>#008000</td>
-			<td>(0,128,0)</td>
-		</tr>
-		<tr>
-			<td style="background: #800080;">&nbsp;</td>
-			<td>Purple</td>
-			<td>#800080</td>
-			<td>(128,0,128)</td>
-		</tr>
-		<tr>
-			<td style="background: #008080;">&nbsp;</td>
-			<td>Teal</td>
-			<td>#008080</td>
-			<td>(0,128,128)</td>
-		</tr>
-		<tr>
-			<td style="background: #000080;">&nbsp;</td>
-			<td>Navy</td>
-			<td>#000080</td>
-			<td>(0,0,128)</td>
-		</tr>
-	</table>
-</div>
+    <h1>Colour Chart</h1>
+    <p>Graph of colours:</p>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
   </body>
 </html>

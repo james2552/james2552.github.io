@@ -23,14 +23,14 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Decade');
+        data.addColumn('number', 'Game Count');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['1970s', 300],
+          ['1980s', 100000],
+          ['1990s', 10000],
+          ['2000s', 5000],
+          ['2010s', 2600]
         ]);
 
         // Set chart options
@@ -49,12 +49,12 @@
     <nav>
       <a href="/">Home</a> |
       <a href="/colour-codes/">Colour Codes</a>
-	<a href="/chart/">Colour Chart</a>
+	<a href="/chart/">Game Chart</a>
     </nav>
   </div>
     <ul>
-    <h1>Colour Chart</h1>
-    <p>Graph of colours:</p>
+    <h1>Game Chart</h1>
+    <p>8-bit games by decade:</p>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
   </body>
